@@ -55,7 +55,7 @@ public class CognizanttestApplication implements CommandLineRunner {
 	private static class EmployeeFromFile {
 		
 		//fields
-		private String  id, first_name, last_name, department, report_to;
+		private String  id, first_name, last_name, department, reportTo;
 		
 		//reader
 		static List <EmployeeFromFile> read (String fileToImport) throws IOException {
@@ -70,7 +70,7 @@ public class CognizanttestApplication implements CommandLineRunner {
 			String getFirstName() {return first_name;}
 			String getLastName() {return last_name;}
 			Department getDepartment() {return Department.valueOf(department);}
-			Integer getReportTo() {return Integer.parseInt(report_to);}
+			Integer getReportTo() {return Integer.parseInt(reportTo);}
 			
 			
 		}
