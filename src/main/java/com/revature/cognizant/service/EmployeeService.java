@@ -2,6 +2,8 @@ package com.revature.cognizant.service;
 
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,10 @@ public class EmployeeService {
 		return employeeRepository.findById(id).orElse(employeeRepository.save(new Employee (id, firstName,  lastName,  department,  reportTo)));
 	}
 	
+	
+	public Optional<Employee> findEmployeeByLastName (String lastName) {
+		return employeeRepository.findByLastName(lastName);
+	}
 	
 	public Iterable<Employee> lookup() {
 		return employeeRepository.findAll();
