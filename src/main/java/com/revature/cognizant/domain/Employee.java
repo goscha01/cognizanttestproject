@@ -6,25 +6,29 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Employee")
 public class Employee {
 	@Id
-	@GeneratedValue
+	@Column(name="EMPL_ID")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
-	
-	@Column(length = 50)
+		
+	@Column(name = "FIRST_NAME", length = 50)
 	private String firstName;
 	
-	@Column(length = 50)
+	@Column(name = "LAST_NAME", length = 50)
 	private String lastName;
 	
-	@Column
+	@Column(name = "DEPART")
 	@Enumerated
 	private Department department;
 	
-	@Column
+	@Column(name = "REPORT_TO")
 	private Integer reportTo;
 
 	public Employee( Integer id, String firstName, String lastName, Department department, Integer reportTo) {
