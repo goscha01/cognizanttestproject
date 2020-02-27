@@ -10,41 +10,20 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
-
+import org.springframework.stereotype.Repository;
 
 import com.revature.cognizant.domain.Department;
 import com.revature.cognizant.domain.Employee;
 
 
-@RepositoryRestResource(collectionResourceRel = "employees", path = "employees")
+@Repository
 public interface EmployeeRepository extends CrudRepository <Employee, Integer>  {
 
 	Optional<Employee> findByLastName(String lastName);
 	
 	List<Employee> findAll ();
 
-	@Override
-	default void deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	default void delete(Employee entity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	default void deleteAll() {
-		// TODO Auto-generated method stub
-		
-	}
 	
-		
-
-	
-
 
 	
 	
